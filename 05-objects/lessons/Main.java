@@ -1,10 +1,19 @@
 public class Main {
+
   public static void main(String[] args) {
-    Car nissan = new Car("Nissan", 5000, 2020, "red");
+    String[] parts = { "Wheels", "Windows" };
+    Car nissan = new Car("Nissan", 5000, 2020, "red", parts);
+    Car dodge = new Car("Dodge", 11000, 2022, "black", parts);
+    Car dodge2 = new Car(dodge);
 
-    Car dodge = new Car("Dodge", 11000, 2022, "black");
+    dodge.drive();
+    nissan.drive();
+    dodge2.drive();
 
-    System.out.printf("This %s is worth $%.0f. It was built in %d and it's %s.\n", nissan.getMake(), nissan.getPrice(), nissan.getYear(), nissan.getColor());
-    System.out.printf("This %s is worth $%.0f. It was built in %d and it's %s.\n", dodge.getMake(), dodge.getPrice(), dodge.getYear(), dodge.getColor());
+    dodge2.setParts(new String[] { "Keys", "Pot" });
+
+    System.out.println(dodge);
+    System.out.println(dodge2);
+    System.out.println(nissan);
   }
 }
